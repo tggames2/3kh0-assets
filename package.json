@@ -6,6 +6,6 @@
         "start": "node server.js"
     },
     "dependencies": {
-        "express": "^4.17.1" // Ensure express is listed as a dependency
+        "express": "^4.17.1"
     }
 }
