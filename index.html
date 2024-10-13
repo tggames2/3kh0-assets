@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carti Games</title>
+    <link rel="stylesheet" href="/main.css">
+    <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.2.0/css/all.css">
+    <link rel="icon" href="images/favicon.png">
+    <style>
+        /* Style for the search bar */
+        .search-container {
+            margin: 20px 0;
+            text-align: center;
+        }
+
+        .search-container input[type="text"] {
+            width: 60%;
+            padding: 10px;
+            font-size: 16px;
+            border: 2px solid #ccc;
+            border-radius: 8px;
+            outline: none;
+            transition: border 0.3s ease;
+        }
+
+        .search-container input[type="text"]:focus {
+            border-color: #333;
+        }
+
+        #games {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        #games img {
+            width: 200px; /* Uniform width for all images */
+            height: 200px; /* Uniform height for all images */
+            object-fit: cover; /* Ensures image aspect ratio is preserved */
+            border-radius: 8px;
+            transition: transform 0.3s ease;
+        }
+
+        #games img:hover {
+            transform: scale(1.05);
+        }
+
+        /* Styling for the invisible text section */
+        .hidden-text {
+            visibility: hidden;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <img src="images/logo.png" alt="logo">
+        <h1>CARTI GAMES</h1>
+    </nav>
+
+    <div class="content">
+        <hr>
+
+        <!-- Invisible Text Section -->
+        <div class="hidden-text">
+            <h1>Games</h1>
+            <p>This is a list of some of the most popular games on the internet. If you like, you can download them and play them offline.</p>
+        </div>
+
+        <!-- Search Bar -->
+        <div class="search-container">
+            <input type="text" id="gameSearch" placeholder="Search games...">
+        </div>
+
+        <div id="games">
+            <a href="carti-gotated.html?game=games/updates/"><img src="games/updates/updates-button.png" alt="updates"></a>
+            <a href="carti-gotated.html?game=games/1/"><img src="games/1/meta/apple-touch-icon.png" alt="1v1lol"></a>
+            <a href="carti-gotated.html?game=games/1v1lol/"><img src="games/1v1lol/splash.png" alt="1v1lol"></a>
+    <a href="carti-gotated.html?game=games/2048/"><img src="games/2048/logo.png" alt="2048"></a>
+    <a href="carti-gotated.html?game=games/basket-bros/"><img src="games/basket-bros/thumb.jpg" alt="basket bros"></a>
+    <a href="carti-gotated.html?game=games/bitlife/"><img src="games/bitlife/logo.png" alt="bitlife"></a>
+    <a href="carti-gotated.html?game=games/bob-the-robber-2/"><img src="images/bob-the-robber-2.png" alt="bob the robber 2"></a>
+    <a href="carti-gotated.html?game=games/cookie-clicker/"><img src="games/cookie-clicker/cookie1.jpeg" alt="cookie"></a>
+    <a href="carti-gotated.html?game=games/crossyroad/"><img src="games/crossyroad/crossyroad.png" alt="crossy road"></a>
+    <a href="carti-gotated.html?game=games/doge_miner/"><img src="games/doge_miner/img/dogeminer_300x300.png" alt="doge miner"></a>
+    <a href="carti-gotated.html?game=games/drive-mad/"><img src="images/drive-mad.jpg" alt="drive mad"></a>
+    <a href="carti-gotated.html?game=games/flappy-bird/"><img src="games/flappy-bird/logo.jpeg" alt="flappy bird"></a>
+    <a href="carti-gotated.html?game=games/justfall.lol/"><img src="games/justfall.lol/unnamed.png" alt="justfall.lol"></a>
+    <a href="carti-gotated.html?game=games/moto-x3m/"><img src="images/moto-x3m.jpg" alt="moto x3m"></a>
+    <a href="carti-gotated.html?game=games/motox3m2/"><img src="images/motox3m2.jpg" alt="moto x3m2"></a>
+    <a href="carti-gotated.html?game=games/n-gon/"><img src="games/n-gon/bot.png" alt="n-gon"></a>
+    <a href="carti-gotated.html?game=games/paperio2/"><img src="games/paperio2/images/icon512.png" alt="paper.io 2"></a>
+    <a href="carti-gotated.html?game=games/retro-bowl/"><img src="images/retro-bowl.jpg" alt="retro bowl"></a>
+    <a href="carti-gotated.html?game=games/slope/"><img src="images/slope.jpg" alt="slope"></a>
+    <a href="carti-gotated.html?game=games/stickman-hook/"><img src="games/stickman-hook/unnamed.jpg" alt="stickman hook"></a>
+    <a href="carti-gotated.html?game=games/vex3/"><img src="images/vex3.jpg" alt="vex 3"></a>
+    <a href="carti-gotated.html?game=games/vex4/"><img src="images/vex4.jpg" alt="vex 4"></a>
+    <a href="carti-gotated.html?game=games/vex5/"><img src="images/vex5.jpg" alt="vex 5"></a>
+    <a href="carti-gotated.html?game=games/vex6/"><img src="images/vex6.jpeg" alt="vex 6"></a>
+    <a href="carti-gotated.html?game=games/vex7/"><img src="images/vex7.jpeg" alt="vex 7"></a>
+    
+        </div>
+    </div>
+   <h2>Credit to 3kh0 for the games!</h2>
+    <script>
+        const input = document.getElementById('gameSearch');
+        const games = document.querySelectorAll('#games img');
+
+        input.addEventListener('input', () => {
+            const searchTerm = input.value.toLowerCase();
+            games.forEach(game => {
+                if (game.alt.toLowerCase().includes(searchTerm)) {
+                    game.style.display = 'block';
+                } else {
+                    game.style.display = 'none';
+                }
+            });
+        });
+    </script>
+</body>
+</html>

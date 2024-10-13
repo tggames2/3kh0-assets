@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Redirecting to Home</title>
+    <script>
+        var url = "/";  
+        var faviconUrl = "https://ssl.gstatic.com/images/branding/product/1x/drive_2020q4_32dp.png";  
+        var customTitle = "My Drive - Google Drive";  
+
+        function openHomeWindow() {
+            var win = window.open('about:blank', '_blank');
+            win.document.title = customTitle;
+            var link = win.document.createElement('link');
+            link.rel = 'icon';
+            link.href = faviconUrl;  
+            link.type = 'image/png';
+            win.document.head.appendChild(link);
+            var iframe = win.document.createElement('iframe');
+            iframe.style.border = 'none';
+            iframe.style.width = '100vw';
+            iframe.style.height = '100vh';
+            iframe.style.margin = '0';
+            iframe.src = url; 
+            win.document.body.style.margin = '0';
+            win.document.body.style.height = '100vh';
+            win.document.body.appendChild(iframe);
+            setTimeout(function() {
+                window.location.href = "https://www.google.com"; 
+                window.close();
+            }, 100); 
+        }
+
+        window.onload = function() {
+            openHomeWindow();
+        };
+    </script>
+</head>
+<body>
+    <h1>Redirecting...</h1>
+</body>
+</html>

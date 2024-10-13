@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carti Games</title>
+    <link rel="stylesheet" href="/main.css">
+    <link rel="icon" href="images/favicon.png">
+    <style>
+        body {
+            background-color: black;
+            color: white;
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        .home-button {
+            background-color: #ffffff;
+            color: black;
+            font-size: 16px;
+            padding: 5px 10px;
+            border: 2px solid black;
+            border-radius: 5px;
+            cursor: pointer;
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            box-shadow: 2px 2px 5px rgba(255, 255, 255, 0.2);
+            z-index: 1000;
+        }
+
+        .home-button:hover {
+            background-color: #f0f0f0;
+        }
+
+        .game-container {
+            position: absolute;
+            top: 50px;
+            left: 0;
+            width: 100vw;
+            height: calc(100vh - 50px);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+    </style>
+</head>
+<body>
+    <button onclick="goHome()" class="home-button">🏠 Home</button>
+    
+    <div class="game-container">
+        <iframe id="gameFrame" src="" frameborder="0"></iframe>
+    </div>
+
+    <script>
+        function goHome() {
+            window.location.href = "/";
+        }
+
+        const params = new URLSearchParams(window.location.search);
+        const gameUrl = params.get('game');
+
+        if (gameUrl) {
+            document.getElementById('gameFrame').src = gameUrl;
+        }
+    </script>
+</body>
+</html>
